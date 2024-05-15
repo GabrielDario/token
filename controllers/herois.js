@@ -29,4 +29,7 @@ const apagarHeroi = async (req, res) => {
     res.status(200).send({ sucess : true})
 }
 
-export  { criarHeroi, getHerois, atualizarHeroi, apagarHeroi, getHeroiPeloId }
+const login = async(req,res) =>{
+
+}
+export  { criarHeroi, getHerois, atualizarHeroi, apagarHeroi, getHeroiPeloId ,login}
