@@ -4,12 +4,14 @@ const criarHeroi = async (req, res) => {
     const { nome, pontosDePoder } = req.body
     if (nome && pontosDePoder) {
         const heroi = await Heroi.create({ nome, pontosDePoder })
-        res.status(200).send({ menssagem: "criarHeroi - Executado com sucesso", data: heroi })
+        res.status(200).send({ menssagem: "criarHeroi - Executado com sucesso", data: heroi });
     } else {
-        res.status(400).send({ menssagem: "Por favor informar nome e pontos " })
+        res.status(400).send({ menssagem: "Por favor informar nome e pontos " });
     }
 }
 const getHerois = async (req, res) => {
+    console.log('GET HEROIS')
+    console.log(req.nivelPermisao)
     const herois = await Heroi.findAll()
     res.status(200).send({ sucess: true, data: herois })
 }

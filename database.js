@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize"
 
-const sequelize = new Sequelize('postgres://hwpivqfw:pdS05tdj99xuoQjCUlOirSP8N1Dg9PLn@kesavan.db.elephantsql.com/hwpivqfw')
+const banco = process.env.DATABASE
 
-
+const sequelize = new Sequelize(banco)
 
 export default sequelize

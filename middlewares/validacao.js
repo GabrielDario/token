@@ -6,6 +6,7 @@ const validarToken = (req, res, next) => {
         const token = req.headers?.authorization
         const infToken = jwt.verify(token, segredo)
         console.log(`INFORMAÇÃO DO TOKEN: ${JSON.stringify(infToken)}`)
+        req.nivelPermisao = infToken
         next()
 
     } catch (erro) {
